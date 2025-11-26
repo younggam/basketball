@@ -20,7 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module game (
+module game
+#(
+    parameter CNT_1MS = 100000,
+    parameter GRAVITY = 1 // 중력 가속도 상수
+)(
     input wire clk,              // 게임 업데이트용 클럭 (예: 60Hz)
     input wire resetn,
     input wire [3:0] sw_speed_x, // 초기 수평 속도 [cite: 26]
@@ -42,19 +46,69 @@ module game (
     localparam BALL_START_X=760;
     localparam BALL_START_Y=380;
 
+    reg [3:0] power;
+    reg empowering;
     reg [1:0] state, next_state;
     reg [15:0] score;
     
     // 물리 변수 (속도, 중력 등)
     reg signed [9:0] velocity_x, velocity_y;
-    parameter GRAVITY = 1; // 중력 가속도 상수
+    
+    reg [31:0] cnt_clk;
+    reg [7:0] cnt_200ms;
+    reg tick_1ms;
+    reg tick_200ms;
+    
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) begin
+            cnt_clk <= 0;
+            tick_1ms <= 0;
+        end
+        else begin
+            if (cnt_clk == (CNT_1MS-1)) begin
+                cnt_clk <= 0;
+                tick_1ms <= 1;
+            end
+            else begin
+                cnt_clk <= cnt_clk + 1;
+                tick_1ms <= 0;
+            end
+        end
+    end
+    
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) begin
+            cnt_200ms <= 0;
+            tick_200ms <= 0;
+        end
+        else begin
+            if (power > 0) begin
+                if (tick_1ms) begin
+                    if (cnt_200ms == 199) begin
+                        cnt_200ms <= 0;
+                        tick_200ms <= 1;
+                    end
+                    else cnt_200ms <= cnt_200ms + 1;
+                end
+                else tick_200ms <= 0;
+            end
+            else begin
+                cnt_200ms <= 0;
+                tick_200ms <= 0;
+            end
+        end
+    end
 
     // 1. 상태 전이 로직 (Sequential)
     always @(posedge clk or negedge resetn) begin
         if (!resetn) begin
+            power <= 0;
             state <= IDLE;
+            score <= 0;
             ball_x <= BALL_START_X;
             ball_y <= BALL_START_Y;
+            velocity_x <= 0;
+            velocity_y <= 0;
         end else begin
             state <= next_state;
             // 상태에 따른 좌표 업데이트 로직
@@ -90,7 +144,24 @@ module game (
     always @(*) begin
         case (state)
             IDLE: begin
-                if (btn_throw) next_state = FLYING;
+                if (btn_throw) begin
+                    if (power == 0) begin
+                        empowering = 1;
+                        power = 1;
+                    end
+                    else if (tick_200ms) begin
+                        if (power == 4'b1111) empowering = 0;
+                        else if (power == 1) empowering = 1;
+                        if (empowering) power = power + 1;
+                        else power = power - 1;
+                    end
+                end                
+                else if (power > 0) begin
+                    power = 0;
+                    velocity_x = power * sw_speed_x;
+                    velocity_y = power * sw_speed_y;
+                    next_state = FLYING;
+                end
                 else next_state = IDLE;
             end
             FLYING: begin
