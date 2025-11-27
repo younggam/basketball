@@ -30,7 +30,6 @@ module game
     input wire [3:0] sw_speed_x, // 초기 수평 속도 [cite: 26]
     input wire [3:0] sw_speed_y, // 초기 수직 속도 [cite: 26]
     input wire btn_throw,
-    input wire tikc_1ms,
     output reg [9:0] ball_x,
     output reg [9:0] ball_y,
     output reg [15:0] score

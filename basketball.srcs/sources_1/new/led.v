@@ -21,16 +21,17 @@
 
 
 module led(
-    input tick_1ms,
-    input tick_50ms,
-    input resetn,
-    input [15:0] score,
+    input wire tick_1ms,
+    input wire tick_50ms,
+    input wire resetn,
+    input wire [15:0] score,
     output reg [7:0] digit,
     output reg [7:0] seg_data
 );
     reg [15:0] temp;
     reg [2:0] i;
     
+    `include "data_led.v"
     
     always @(posedge tick_50ms or negedge resetn) begin
         if(!resetn) temp <= 0;
