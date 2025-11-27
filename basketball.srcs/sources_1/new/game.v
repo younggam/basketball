@@ -27,8 +27,8 @@ module game
     parameter GOAL_X_RIGHT=100,
     parameter GOAL_Y=100,
     parameter BALL_RADIUS=12,
-    parameter BALL_START_X=760,
-    parameter BALL_START_Y=380
+    parameter PLAYER_X=760,
+    parameter PLAYER_Y=380
 )(
     input wire tick_50ms,              
     input wire resetn,
@@ -87,8 +87,8 @@ module game
             power <= 0;
             state <= IDLE;
             score <= 0;
-            ball_x <= BALL_START_X;
-            ball_y <= BALL_START_Y;
+            ball_x <= PLAYER_X;
+            ball_y <= PLAYER_Y;
             velocity_x <= 0;
             velocity_y <= 0;
         end else begin
@@ -97,8 +97,8 @@ module game
             case (state)
                 // 초기 위치 고정
                 IDLE: begin
-                    ball_x <= BALL_START_X;
-                    ball_y <= BALL_START_Y;
+                    ball_x <= PLAYER_X;
+                    ball_y <= PLAYER_Y;
                 end
                 FLYING, GOAL: begin
                     // 골대와 충돌 시 반발
@@ -146,7 +146,7 @@ module game
             end
             FLYING: begin
                 // 바닥에 닿거나 골대에 닿으면 상태 변경
-                if (ball_y >= 460) next_state = IDLE; // 바닥 닿음
+                if (ball_y >= 480 - BALL_RADIUS) next_state = IDLE; // 바닥 닿음
                 else if (collide_line(ball_x, ball_y, BALL_RADIUS, GOAL_X_LEFT, GOAL_X_RIGHT, GOAL_Y) && velocity_y <= 0) begin
                     score = score + 1; // 골 점수
                     velocity_x = velocity_x >>> 1; // 골망 효과 속도 감소
@@ -156,7 +156,7 @@ module game
                 else next_state = FLYING;
             end
             GOAL: begin
-                if (ball_y >= 460) next_state = IDLE; // 바닥 닿음
+                if (ball_y >= 480 - BALL_RADIUS) next_state = IDLE; // 바닥 닿음
                 else next_state = GOAL;
             end
         endcase

@@ -25,8 +25,6 @@ module drawer#(
     parameter GOAL_X_RIGHT=100,
     parameter GOAL_Y=100,
     parameter BALL_RADIUS=12,
-    parameter BALL_START_X=760,
-    parameter BALL_START_Y=380,
     parameter PLAYER_X=760,
     parameter PLAYER_Y=380
 )
@@ -45,7 +43,7 @@ module drawer#(
                 {red, green, blue} = 12'hF80; // 주황색
             end
             // 2. 플레이어 그리기 (녹색 사각형) 
-            else if (pixel_x > PLAYER_X && pixel_x <= PLAYER_X+40 && pixel_y > PLAYER_Y && pixel_y <= PLAYER_Y+260) begin
+            else if (pixel_x > PLAYER_X && pixel_x <= PLAYER_X+40 && pixel_y > PLAYER_Y && pixel_y <= PLAYER_Y+120) begin
                 {red, green, blue} = 12'h0F0; // 녹색
             end
             // 3. 골대 림 그리기 (빨간색) [cite: 24]

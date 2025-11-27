@@ -28,10 +28,8 @@ module basketball#(
     parameter GOAL_X_RIGHT=100,
     parameter GOAL_Y=100,
     parameter BALL_RADIUS=12,
-    parameter BALL_START_X=760,
-    parameter BALL_START_Y=380,
-    parameter PLAYER_X=760,
-    parameter PLAYER_Y=380
+    parameter PLAYER_X=600,
+    parameter PLAYER_Y=360
 )(
     input wire clk,
     input wire resetn,
@@ -63,8 +61,8 @@ module basketball#(
         .GOAL_X_RIGHT(GOAL_X_RIGHT),
         .GOAL_Y(GOAL_Y),
         .BALL_RADIUS(BALL_RADIUS),
-        .BALL_START_X(BALL_START_X),
-        .BALL_START_Y(BALL_START_Y)
+        .PLAYER_X(PLAYER_X),
+        .PLAYER_Y(PLAYER_Y)
     )game_(
         .tick_50ms(tick_50ms),              
         .resetn(resetn),
@@ -88,8 +86,6 @@ module basketball#(
         .GOAL_X_RIGHT(GOAL_X_RIGHT),
         .GOAL_Y(GOAL_Y),
         .BALL_RADIUS(BALL_RADIUS),
-        .BALL_START_X(BALL_START_X),
-        .BALL_START_Y(BALL_START_Y),
         .PLAYER_X(PLAYER_X),
         .PLAYER_Y(PLAYER_Y)
     )drawer_(
