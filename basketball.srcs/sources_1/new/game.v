@@ -60,6 +60,7 @@ module game
     reg [1:0] cnt_200ms;
     reg tick_200ms;
     
+    // power 조절용 기준
     always @(posedge tick_50ms or negedge resetn) begin
         if (!resetn) begin
             cnt_200ms <= 0;
