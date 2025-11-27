@@ -22,8 +22,13 @@
 
 module game
 #(
-    parameter CNT_1MS = 100000,
-    parameter GRAVITY = 1 // 중력 가속도 상수
+    parameter GRAVITY = 1, // 중력 가속도 상수
+    parameter GOAL_X_LEFT=20,
+    parameter GOAL_X_RIGHT=100,
+    parameter GOAL_Y=100,
+    parameter BALL_RADIUS=12,
+    parameter BALL_START_X=760,
+    parameter BALL_START_Y=380
 )(
     input wire tick_50ms,              
     input wire resetn,
@@ -41,13 +46,6 @@ module game
     localparam IDLE = 2'b00;   // 공 던지기 전
     localparam FLYING = 2'b01; // 공이 날아가는 중 
     localparam GOAL = 2'b10;   // 골인/종료
-    
-    localparam GOAL_X_LEFT=20;
-    localparam GOAL_X_RIGHT=100;
-    localparam GOAL_Y=100;
-    localparam BALL_RADIUS=12;
-    localparam BALL_START_X=760;
-    localparam BALL_START_Y=380;
 
     reg [3:0] power;
     reg empowering;

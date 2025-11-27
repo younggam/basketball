@@ -22,7 +22,14 @@
 
 module basketball#(
     parameter CNT_1MS=100000,
-    parameter GRAVITY = 1 // 중력 가속도 상수
+    parameter GRAVITY = 1, // 중력 가속도 상수
+    
+    parameter GOAL_X_LEFT=20,
+    parameter GOAL_X_RIGHT=100,
+    parameter GOAL_Y=100,
+    parameter BALL_RADIUS=12,
+    parameter BALL_START_X=760,
+    parameter BALL_START_Y=380
 )(
     input wire clk,
     input wire resetn,
@@ -36,18 +43,28 @@ module basketball#(
     wire [15:0] score;
     wire [9:0] ball_x, ball_y;
     
-    tick tick_(
+    tick #(
+        .CNT_1MS(CNT_1MS)
+    )tick_(
         .clk(clk),
         .resetn(resetn),
         .tick_1ms(tick_1ms),
         .tick_50ms(tick_50ms)        
     );
     
-    game game_(
+    game #(
+        .GRAVITY(GRAVITY),
+        .GOAL_X_LEFT(GOAL_X_LEFT),
+        .GOAL_X_RIGHT(GOAL_X_RIGHT),
+        .GOAL_Y(GOAL_Y),
+        .BALL_RADIUS(BALL_RADIUS),
+        .BALL_START_X(BALL_START_X),
+        .BALL_START_Y(BALL_START_Y)
+    )game_(
         .tick_50ms(tick_50ms),              
         .resetn(resetn),
-        .sw_speed_x(sw_speed_x), // 초기 수평 속도 [cite: 26]
-        .sw_speed_y(sw_speed_y), // 초기 수직 속도 [cite: 26]
+        .sw_speed_x(sw_speed_x),
+        .sw_speed_y(sw_speed_y),
         .btn_throw(btn_throw),
         .ball_x(ball_x),
         .ball_y(ball_y),
