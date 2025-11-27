@@ -37,14 +37,18 @@ module basketball#(
     input wire [3:0] sw_speed_y, // 초기 수직 속도 [cite: 26]
     input wire btn_throw,
     output reg [7:0] digit,
-    output reg [7:0] seg_data
+    output reg [7:0] seg_data,
+    output wire hsync,
+    output wire vsync,
+    output wire [3:0] red,
+    output wire [3:0] green,
+    output wire [3:0] blue
 );
-    wire tick_1ms, tick_50ms;
+    wire tick_1ms, tick_50ms, pixel_clk;
     wire [15:0] score;
     wire [9:0] ball_x, ball_y;
     wire [9:0] pixel_x, pixel_y;
     wire video_on;
-    wire [3:0] red, green, blue;
     
     tick #(
         .CNT_1MS(CNT_1MS)
@@ -52,7 +56,8 @@ module basketball#(
         .clk(clk),
         .resetn(resetn),
         .tick_1ms(tick_1ms),
-        .tick_50ms(tick_50ms)        
+        .tick_50ms(tick_50ms),
+        .pixel_clk(pixel_clk)        
     );
     
     game #(
@@ -97,5 +102,14 @@ module basketball#(
         .red(red),
         .green(green),
         .blue(blue)
+    );
+    vga(
+        .pixel_clk(pixel_clk),
+        .resetn(resetn),
+        .hsync(hsync),
+        .vsync(vsync),
+        .pixel_x(pixel_x),
+        .pixel_y(pixel_y),
+        .video_on(video_on)
     );
 endmodule
