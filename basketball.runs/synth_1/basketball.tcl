@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a75tfgg484-1
@@ -94,6 +95,8 @@ read_xdc C:/Users/admin/vivado_projects/basketball/basketball.srcs/constrs_1/new
 set_property used_in_implementation false [get_files C:/Users/admin/vivado_projects/basketball/basketball.srcs/constrs_1/new/basketball.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/admin/vivado_projects/basketball/basketball.srcs/utils_1/imports/synth_1/basketball.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

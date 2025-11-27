@@ -91,7 +91,8 @@ module game
             ball_y <= PLAYER_Y;
             velocity_x <= 0;
             velocity_y <= 0;
-        end else begin
+        end
+        else begin
             state <= next_state;
             // 상태에 따른 좌표 업데이트 로직
             case (state)

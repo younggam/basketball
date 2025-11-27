@@ -53,8 +53,8 @@ module vga (
     wire v_sync_next, h_sync_next;
 
     // 1. 카운터 로직 (Pixel Counting)
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+    always @(posedge pixel_clk or negedge resetn) begin
+        if (!resetn) begin
             h_count_reg <= 0;
             v_count_reg <= 0;
             v_sync_reg <= 1'b1;

@@ -34,9 +34,14 @@ module led(
     `include "data_led.v"
     
     always @(posedge tick_50ms or negedge resetn) begin
-        if(!resetn) temp <= 0;
-        else temp <= score;
-        i <= 0;
+        if(!resetn) begin
+            temp <= 0;
+            i <= 0;
+        end
+        else begin
+            temp <= score;
+            i <= 0;
+        end
     end
     
     always @(posedge tick_1ms or negedge resetn) begin

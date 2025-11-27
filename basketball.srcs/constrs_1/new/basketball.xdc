@@ -11,7 +11,7 @@ set_property -dict {PACKAGE_PIN J6 IOSTANDARD LVCMOS33} [get_ports sw_speed_y[1]
 set_property -dict {PACKAGE_PIN L5 IOSTANDARD LVCMOS33} [get_ports sw_speed_y[2]]
 set_property -dict {PACKAGE_PIN L4 IOSTANDARD LVCMOS33} [get_ports sw_speed_y[3]]
 
-set_property -dict {PACKAGE_PIN U18 IOSTANDARD LVCMOS33} [get_ports btn_throw]
+set_property -dict {PACKAGE_PIN M21 IOSTANDARD LVCMOS33} [get_ports btn_throw]
 
 set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports digit[0]]
 set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports digit[1]]

@@ -36,8 +36,8 @@ module basketball#(
     input wire [3:0] sw_speed_x, // 초기 수평 속도 [cite: 26]
     input wire [3:0] sw_speed_y, // 초기 수직 속도 [cite: 26]
     input wire btn_throw,
-    output reg [7:0] digit,
-    output reg [7:0] seg_data,
+    output wire [7:0] digit,
+    output wire [7:0] seg_data,
     output wire [3:0] red,
     output wire [3:0] green,
     output wire [3:0] blue,

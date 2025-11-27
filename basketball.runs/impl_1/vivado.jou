@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Nov 28 00:34:12 2025
+# Process ID         : 17960
+# Current directory  : C:/Users/admin/vivado_projects/basketball/basketball.runs/impl_1
+# Command line       : vivado.exe -log basketball.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source basketball.tcl -notrace
+# Log file           : C:/Users/admin/vivado_projects/basketball/basketball.runs/impl_1/basketball.vdi
+# Journal file       : C:/Users/admin/vivado_projects/basketball/basketball.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-DQ3RCJM
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz
+# CPU Frequency      : 3696 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 6
+# Host memory        : 34276 MB
+# Swap memory        : 5493 MB
+# Total Virtual      : 39770 MB
+# Available Virtual  : 19616 MB
+#-----------------------------------------------------------
+source basketball.tcl -notrace
