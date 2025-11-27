@@ -29,7 +29,9 @@ module basketball#(
     parameter GOAL_Y=100,
     parameter BALL_RADIUS=12,
     parameter BALL_START_X=760,
-    parameter BALL_START_Y=380
+    parameter BALL_START_Y=380,
+    parameter PLAYER_X=760,
+    parameter PLAYER_Y=380
 )(
     input wire clk,
     input wire resetn,
@@ -42,6 +44,9 @@ module basketball#(
     wire tick_1ms, tick_50ms;
     wire [15:0] score;
     wire [9:0] ball_x, ball_y;
+    wire [9:0] pixel_x, pixel_y;
+    wire video_on;
+    wire [3:0] red, green, blue;
     
     tick #(
         .CNT_1MS(CNT_1MS)
@@ -77,5 +82,24 @@ module basketball#(
         .score(score),
         .digit(digit),
         .seg_data(seg_data)
+    );
+    drawer #(
+        .GOAL_X_LEFT(GOAL_X_LEFT), // 공의 반지름과 오브젝트 위치 상수
+        .GOAL_X_RIGHT(GOAL_X_RIGHT),
+        .GOAL_Y(GOAL_Y),
+        .BALL_RADIUS(BALL_RADIUS),
+        .BALL_START_X(BALL_START_X),
+        .BALL_START_Y(BALL_START_Y),
+        .PLAYER_X(PLAYER_X),
+        .PLAYER_Y(PLAYER_Y)
+    )drawer_(
+        .pixel_x(pixel_x),
+        .pixel_y(pixel_y),
+        .video_on(video_on),
+        .ball_x(ball_x),
+        .ball_y(ball_y),
+        .red(red),
+        .green(green),
+        .blue(blue)
     );
 endmodule
