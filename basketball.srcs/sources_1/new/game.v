@@ -34,6 +34,8 @@ module game
     output reg [9:0] ball_y
 );
 
+    `include "math.v"
+
     // 상태 정의
     localparam IDLE = 2'b00;   // 공 던지기 전
     localparam FLYING = 2'b01; // 공이 날아가는 중 
@@ -120,17 +122,15 @@ module game
                 end
                 FLYING, GOAL: begin
                     // 골대와 충돌 시 반발
-                    if (ball_y - GOAL_Y <= BALL_RADIUS && GOAL_Y - ball_y <= BALL_RADIUS) begin // Y 검사
-                        if (ball_x - GOAL_X_LEFT <= BALL_RADIUS && GOAL_X_LEFT - ball_x <= BALL_RADIUS) begin // 골대 왼쪽 끝과 충돌
-                            if (ball_x - GOAL_X_LEFT >= ball_y - GOAL_Y  
-                                || GOAL_X_LEFT - ball_x >= ball_y - GOAL_Y) velocity_x <= -velocity_x; // 좌 우 에서 접근 판별
-                            else velocity_y <= -velocity_y; // 아래 위 에서 접근 판별
-                        end
-                        else if (ball_x - GOAL_X_RIGHT <= BALL_RADIUS && GOAL_X_RIGHT - ball_x <= BALL_RADIUS) begin // 골대 오른쪽 끝과 충돌
-                            if (ball_x - GOAL_X_RIGHT >= ball_y - GOAL_Y
-                                || GOAL_X_RIGHT - ball_x >= ball_y - GOAL_Y) velocity_x <= -velocity_x; // 좌 우 에서 접근 판별
-                            else velocity_y <= -velocity_y; // 아래 위에서 접근 판별
-                        end
+                    if (collide_dot(ball_x,ball_y,BALL_RADIUS,GOAL_X_LEFT,GOAL_Y)) begin // 골대 왼쪽 끝과 충돌
+                        if (ball_x - GOAL_X_LEFT >= ball_y - GOAL_Y && GOAL_X_LEFT - ball_x <= ball_y - GOAL_Y
+                        || ball_x - GOAL_X_LEFT <= ball_y - GOAL_Y && GOAL_X_LEFT - ball_x >= ball_y - GOAL_Y) velocity_x <= -velocity_x; // 좌 우 에서 접근 판별
+                        else velocity_y <= -velocity_y; // 아래 위 에서 접근 판별
+                    end
+                    else if (collide_dot(ball_x,ball_y,BALL_RADIUS,GOAL_X_RIGHT,GOAL_Y)) begin // 골대 오른쪽 끝과 충돌
+                        if (ball_x - GOAL_X_RIGHT >= ball_y - GOAL_Y && GOAL_X_RIGHT - ball_x <= ball_y - GOAL_Y
+                        || ball_x - GOAL_X_RIGHT <= ball_y - GOAL_Y && GOAL_X_RIGHT - ball_x >= ball_y - GOAL_Y) velocity_x <= -velocity_x; // 좌 우 에서 접근 판별
+                        else velocity_y <= -velocity_y; // 아래 위에서 접근 판별
                     end
                     ball_x <= ball_x + velocity_x;
                     ball_y <= ball_y + velocity_y;
@@ -167,9 +167,7 @@ module game
             FLYING: begin
                 // 바닥에 닿거나 골대에 닿으면 상태 변경
                 if (ball_y >= 460) next_state = IDLE; // 바닥 닿음
-                else if (ball_y - GOAL_Y <= BALL_RADIUS && GOAL_Y - ball_y <= BALL_RADIUS
-                    && ball_x - GOAL_X_LEFT > BALL_RADIUS && GOAL_X_RIGHT - ball_x > BALL_RADIUS
-                    && velocity_y <= 0) begin
+                else if (collide_line(ball_x, ball_y, BALL_RADIUS, GOAL_X_LEFT, GOAL_X_RIGHT, GOAL_Y) && velocity_y <= 0) begin
                     score = score + 1; // 골 점수
                     velocity_x = velocity_x >>> 1; // 골망 효과 속도 감소
                     velocity_y = velocity_y >>> 1;
