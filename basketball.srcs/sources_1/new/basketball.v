@@ -38,11 +38,11 @@ module basketball#(
     input wire btn_throw,
     output reg [7:0] digit,
     output reg [7:0] seg_data,
-    output wire hsync,
-    output wire vsync,
     output wire [3:0] red,
     output wire [3:0] green,
-    output wire [3:0] blue
+    output wire [3:0] blue,
+    output wire hsync,
+    output wire vsync
 );
     wire tick_1ms, tick_50ms, pixel_clk;
     wire [15:0] score;
