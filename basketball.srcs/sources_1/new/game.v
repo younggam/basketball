@@ -25,13 +25,15 @@ module game
     parameter CNT_1MS = 100000,
     parameter GRAVITY = 1 // 중력 가속도 상수
 )(
-    input wire clk,              // 게임 업데이트용 클럭 (예: 60Hz)
+    input wire tick_50ms,              
     input wire resetn,
     input wire [3:0] sw_speed_x, // 초기 수평 속도 [cite: 26]
     input wire [3:0] sw_speed_y, // 초기 수직 속도 [cite: 26]
     input wire btn_throw,
+    input wire tikc_1ms,
     output reg [9:0] ball_x,
-    output reg [9:0] ball_y
+    output reg [9:0] ball_y,
+    output reg [15:0] score
 );
 
     `include "math.v"
@@ -51,42 +53,22 @@ module game
     reg [3:0] power;
     reg empowering;
     reg [1:0] state, next_state;
-    reg [15:0] score;
     
     // 물리 변수 (속도, 중력 등)
     reg signed [9:0] velocity_x, velocity_y;
     
-    reg [31:0] cnt_clk;
-    reg [7:0] cnt_200ms;
-    reg tick_1ms;
+    reg [1:0] cnt_200ms;
     reg tick_200ms;
     
-    always @(posedge clk or negedge resetn) begin
-        if (!resetn) begin
-            cnt_clk <= 0;
-            tick_1ms <= 0;
-        end
-        else begin
-            if (cnt_clk == (CNT_1MS-1)) begin
-                cnt_clk <= 0;
-                tick_1ms <= 1;
-            end
-            else begin
-                cnt_clk <= cnt_clk + 1;
-                tick_1ms <= 0;
-            end
-        end
-    end
-    
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge tick_50ms or negedge resetn) begin
         if (!resetn) begin
             cnt_200ms <= 0;
             tick_200ms <= 0;
         end
         else begin
             if (power > 0) begin
-                if (tick_1ms) begin
-                    if (cnt_200ms == 199) begin
+                if (tick_50ms) begin
+                    if (cnt_200ms == 3) begin
                         cnt_200ms <= 0;
                         tick_200ms <= 1;
                     end
@@ -102,7 +84,7 @@ module game
     end
 
     // 1. 상태 전이 로직 (Sequential)
-    always @(posedge clk or negedge resetn) begin
+    always @(posedge tick_50ms or negedge resetn) begin
         if (!resetn) begin
             power <= 0;
             state <= IDLE;
