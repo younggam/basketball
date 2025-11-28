@@ -24,16 +24,16 @@ function [7:0] data_led;
     input [3:0] addr_in;
     begin
         case (addr_in)
-            0: data_led=8'b1111_1100;
-            1: data_led=8'b0110_0000;
-            2: data_led=8'b1101_1010;
-            3: data_led=8'b1111_0010;
+            0: data_led=8'b0011_1111;
+            1: data_led=8'b0000_0110;
+            2: data_led=8'b0101_1011;
+            3: data_led=8'b0010_1111;
             4: data_led=8'b0110_0110;
-            5: data_led=8'b1011_0110;
-            6: data_led=8'b1011_1110;
-            7: data_led=8'b1110_0100;
-            8: data_led=8'b1111_1110;
-            9: data_led=8'b1111_0110;
+            5: data_led=8'b0110_1101;
+            6: data_led=8'b0111_1101;
+            7: data_led=8'b0010_0111;
+            8: data_led=8'b0111_1111;
+            9: data_led=8'b0110_1111;
             default: data_led=8'b0000_0000;
         endcase
     end
