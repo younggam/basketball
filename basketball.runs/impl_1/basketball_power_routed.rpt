@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date             : Fri Nov 28 00:35:42 2025
+| Date             : Sat Nov 29 22:34:06 2025
 | Host             : DESKTOP-DQ3RCJM running 64-bit major release  (build 9200)
 | Command          : report_power -file basketball_power_routed.rpt -pb basketball_power_summary_routed.pb -rpx basketball_power_routed.rpx
 | Design           : basketball
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.104        |
+| Total On-Chip Power (W)  | 0.105        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.007        |
+| Dynamic (W)              | 0.008        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 2.7          |
 | Max Ambient (C)          | 84.7         |
@@ -53,16 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      383 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      240 |     47200 |            0.51 |
-|   CARRY4       |    <0.001 |       38 |     15850 |            0.24 |
-|   Register     |    <0.001 |       55 |     94400 |            0.06 |
-|   Others       |     0.000 |       10 |       --- |             --- |
-| Signals        |     0.001 |      501 |       --- |             --- |
+| Slice Logic    |     0.001 |      435 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      257 |     47200 |            0.54 |
+|   CARRY4       |    <0.001 |       42 |     15850 |            0.26 |
+|   Register     |    <0.001 |       77 |     94400 |            0.08 |
+|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
+|   Others       |     0.000 |       11 |       --- |             --- |
+| Signals        |     0.001 |      541 |       --- |             --- |
 | DSPs           |     0.004 |        6 |       180 |            3.33 |
 | I/O            |    <0.001 |       32 |       285 |           11.23 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.104 |          |           |                 |
+| Total          |     0.105 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -141,8 +142,9 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| basketball |     0.007 |
+| basketball |     0.008 |
 |   drawer_  |     0.005 |
+|   tick_    |     0.001 |
 +------------+-----------+
 
 

@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef" \
+"../../../../basketball.srcs/sources_1/new/basketball.v" \
+"../../../../basketball.srcs/sources_1/new/drawer.v" \
+"../../../../basketball.srcs/sources_1/new/game.v" \
+"../../../../basketball.srcs/sources_1/new/led.v" \
+"../../../../basketball.srcs/sources_1/new/tick.v" \
+"../../../../basketball.srcs/sources_1/new/vga.v" \
+"../../../../basketball.srcs/sim_1/new/basketball_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

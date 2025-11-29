@@ -55,7 +55,7 @@ module tick#(
             tick_1ms <= 0;
         end
         else begin
-            if (tick_1ms)
+            if (pixel_clk)
                 if (cnt_1ms == 24999) begin
                     cnt_1ms <= 0;
                     tick_1ms <= 1;

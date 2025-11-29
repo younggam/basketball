@@ -103,7 +103,7 @@ module basketball#(
         .green(green),
         .blue(blue)
     );
-    vga(
+    vga vga_(
         .pixel_clk(pixel_clk),
         .resetn(resetn),
         .hsync(hsync),

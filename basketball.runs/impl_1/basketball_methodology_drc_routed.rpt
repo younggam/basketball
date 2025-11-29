@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Fri Nov 28 00:35:42 2025
+| Date         : Sat Nov 29 22:34:06 2025
 | Host         : DESKTOP-DQ3RCJM running 64-bit major release  (build 9200)
 | Command      : report_methodology -file basketball_methodology_drc_routed.rpt -pb basketball_methodology_drc_routed.pb -rpx basketball_methodology_drc_routed.rpx
 | Design       : basketball
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 29
+             Checks found: 35
 +-----------+------------------+-------------------------------+--------+
 | Rule      | Severity         | Description                   | Checks |
 +-----------+------------------+-------------------------------+--------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 22     |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 28     |
 | SYNTH-10  | Warning          | Wide multiplier               | 6      |
 | TIMING-18 | Warning          | Missing input or output delay | 1      |
 +-----------+------------------+-------------------------------+--------+
@@ -36,112 +36,142 @@ Table of Contents
 -----------------
 TIMING-17#1 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[0]/C is not reached by a timing clock
+The clock pin led_/seg_data_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#2 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[1]/C is not reached by a timing clock
+The clock pin led_/seg_data_reg[5]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#3 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[2]/C is not reached by a timing clock
+The clock pin led_/seg_data_reg[5]_lopt_replica_2/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#4 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[3]/C is not reached by a timing clock
+The clock pin led_/seg_data_reg[5]_lopt_replica_3/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[4]/C is not reached by a timing clock
+The clock pin led_/seg_data_reg[5]_lopt_replica_4/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[5]/C is not reached by a timing clock
+The clock pin led_/seg_data_reg[5]_lopt_replica_5/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[6]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#8 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[7]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#9 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[8]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#10 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_count_reg_reg[9]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#11 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/h_sync_reg_reg/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#12 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[0]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[1]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#14 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[2]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[3]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#16 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[4]/C is not reached by a timing clock
+The clock pin vga_/h_count_reg_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#17 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[5]/C is not reached by a timing clock
+The clock pin vga_/h_sync_reg_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#18 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[6]/C is not reached by a timing clock
+The clock pin vga_/v_count_reg_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[7]/C is not reached by a timing clock
+The clock pin vga_/v_count_reg_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[8]/C is not reached by a timing clock
+The clock pin vga_/v_count_reg_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_count_reg_reg[9]/C is not reached by a timing clock
+The clock pin vga_/v_count_reg_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Critical Warning
 Non-clocked sequential cell  
-The clock pin nolabel_line106/v_sync_reg_reg/C is not reached by a timing clock
+The clock pin vga_/v_count_reg_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#23 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_/v_count_reg_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#24 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_/v_count_reg_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_/v_count_reg_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_/v_count_reg_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_/v_count_reg_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#28 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_/v_sync_reg_reg/C is not reached by a timing clock
 Related violations: <none>
 
 SYNTH-10#1 Warning
