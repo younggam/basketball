@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module vga (
+    input wire clk,
     input wire pixel_clk,           // 픽셀 클럭 (25MHz 권장 for 640x480)
     input wire resetn,         // 리셋 (Active Low)
     output wire hsync,        // 수평 동기 신호
@@ -53,17 +54,19 @@ module vga (
     wire v_sync_next, h_sync_next;
 
     // 1. 카운터 로직 (Pixel Counting)
-    always @(posedge pixel_clk or negedge resetn) begin
+    always @(posedge clk or negedge resetn) begin
         if (!resetn) begin
             h_count_reg <= 0;
             v_count_reg <= 0;
             v_sync_reg <= 1'b1;
             h_sync_reg <= 1'b1;
         end else begin
-            h_count_reg <= h_count_next;
-            v_count_reg <= v_count_next;
-            v_sync_reg <= v_sync_next;
-            h_sync_reg <= h_sync_next;
+            if (pixel_clk) begin
+                h_count_reg <= h_count_next;
+                v_count_reg <= v_count_next;
+                v_sync_reg <= v_sync_next;
+                h_sync_reg <= h_sync_next;
+            end
         end
     end
 

@@ -21,6 +21,7 @@
 
 
 module led(
+    input wire clk,
     input wire tick_1ms,
     input wire tick_50ms,
     input wire resetn,
@@ -33,25 +34,27 @@ module led(
     
     `include "data_led.v"
     
-    always @(posedge tick_50ms or negedge resetn) begin
+    always @(posedge clk or negedge resetn) begin
         if(!resetn) begin
+            seg_data<=8'b0000_0000; 
             temp <= 0;
-            i <= 0;
+            i <= 7;
         end
         else begin
-            temp <= score;
-            i <= 0;
-        end
-    end
-    
-    always @(posedge tick_1ms or negedge resetn) begin
-        if(!resetn) seg_data<=8'b0000_0000;
-        else begin
-            digit <= 1 << i;
-            seg_data <= data_led(temp % 10);
-            temp <= temp / 10;
-            if(i == 7) i <= 0;
-            else i <= i + 1;
+            if(tick_1ms) begin
+                digit <= 1 << i;
+                seg_data <= data_led(temp % 10);
+                temp <= temp / 10;
+                if(i == 0) begin
+                    temp <= score;
+                    i <= 7;
+                end
+                else i <= i - 1;
+            end
+            if (tick_50ms) begin
+                temp <= score;
+                i <= 7;
+            end
         end
     end
 endmodule

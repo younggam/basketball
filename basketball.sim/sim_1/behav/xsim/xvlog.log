@@ -1,14 +1,14 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/basketball.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/basketball/basketball.srcs/sources_1/new/basketball.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module basketball
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/drawer.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/basketball/basketball.srcs/sources_1/new/drawer.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module drawer
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/game.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/basketball/basketball.srcs/sources_1/new/game.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module game
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/led.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/basketball/basketball.srcs/sources_1/new/led.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module led
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/tick.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/basketball/basketball.srcs/sources_1/new/tick.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tick
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/vga.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/basketball/basketball.srcs/sources_1/new/vga.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module vga
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/admin/vivado_projects/basketball/basketball.srcs/sim_1/new/basketball_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/USER/basketball/basketball.srcs/sim_1/new/basketball_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module basketball_tb

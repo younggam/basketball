@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/admin/vivado_projects/basketball/basketball.runs/synth_1/basketball.tcl"
+  variable script "C:/Users/USER/basketball/basketball.runs/synth_1/basketball.tcl"
   variable category "vivado_synth"
 }
 
@@ -57,29 +57,32 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a75tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/admin/vivado_projects/basketball/basketball.cache/wt [current_project]
-set_property parent.project_path C:/Users/admin/vivado_projects/basketball/basketball.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/USER/basketball/basketball.cache/wt [current_project]
+set_property parent.project_path C:/Users/USER/basketball/basketball.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/admin/vivado_projects/basketball/basketball.cache/ip [current_project]
+set_property ip_output_repo c:/Users/USER/basketball/basketball.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/drawer.v
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/math.v
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/game.v
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/data_led.v
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/led.v
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/tick.v
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/vga.v
-  C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/basketball.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/drawer.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/math.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/game.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/data_led.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/led.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/tick.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/vga.v
+  C:/Users/USER/basketball/basketball.srcs/sources_1/new/basketball.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -90,12 +93,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/admin/vivado_projects/basketball/basketball.srcs/constrs_1/new/basketball.xdc
-set_property used_in_implementation false [get_files C:/Users/admin/vivado_projects/basketball/basketball.srcs/constrs_1/new/basketball.xdc]
+read_xdc C:/Users/USER/basketball/basketball.srcs/constrs_1/new/basketball.xdc
+set_property used_in_implementation false [get_files C:/Users/USER/basketball/basketball.srcs/constrs_1/new/basketball.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/admin/vivado_projects/basketball/basketball.srcs/utils_1/imports/synth_1/basketball.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/USER/basketball/basketball.srcs/utils_1/imports/synth_1/basketball.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

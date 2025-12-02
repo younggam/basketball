@@ -41,6 +41,8 @@ module basketball#(
     output wire [3:0] red,
     output wire [3:0] green,
     output wire [3:0] blue,
+    output wire [9:0] debug_,
+    output wire debug_btn,
     output wire hsync,
     output wire vsync
 );
@@ -49,7 +51,7 @@ module basketball#(
     wire [9:0] ball_x, ball_y;
     wire [9:0] pixel_x, pixel_y;
     wire video_on;
-    
+    assign debug_btn=btn_throw;
     tick #(
         .CNT_1MS(CNT_1MS)
     )tick_(
@@ -69,6 +71,7 @@ module basketball#(
         .PLAYER_X(PLAYER_X),
         .PLAYER_Y(PLAYER_Y)
     )game_(
+        .clk(clk),
         .tick_50ms(tick_50ms),              
         .resetn(resetn),
         .sw_speed_x(sw_speed_x),
@@ -79,6 +82,7 @@ module basketball#(
         .score(score)
     );
     led led_(
+        .clk(clk),
         .tick_1ms(tick_1ms),
         .tick_50ms(tick_50ms),
         .resetn(resetn),
@@ -104,6 +108,7 @@ module basketball#(
         .blue(blue)
     );
     vga vga_(
+        .clk(clk),
         .pixel_clk(pixel_clk),
         .resetn(resetn),
         .hsync(hsync),

@@ -1,14 +1,14 @@
 0.7
 2020.2
-May 22 2025
-00:13:55
-C:/Users/admin/vivado_projects/basketball/basketball.sim/sim_1/behav/xsim/glbl.v,1741209010,verilog,,,,glbl,,,,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sim_1/new/basketball_tb.v,1764421955,verilog,,,,basketball_tb,,,../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/basketball.v,1764421401,verilog,,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/drawer.v,,basketball,,,../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/data_led.v,1764420862,verilog,,,,,,,,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/drawer.v,1764253175,verilog,,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/game.v,,drawer,,,../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/game.v,1764422813,verilog,,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/led.v,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/math.v,game,,,../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/led.v,1764256238,verilog,,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/tick.v,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/data_led.v,led,,,../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/math.v,1764243993,verilog,,,,,,,,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/tick.v,1764421894,verilog,,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/vga.v,,tick,,,../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
-C:/Users/admin/vivado_projects/basketball/basketball.srcs/sources_1/new/vga.v,1764255292,verilog,,C:/Users/admin/vivado_projects/basketball/basketball.srcs/sim_1/new/basketball_tb.v,,vga,,,../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef,,,,,
+Nov 14 2025
+19:37:27
+C:/Users/USER/basketball/basketball.sim/sim_1/behav/xsim/glbl.v,1764657535,verilog,,,,glbl,,,,,,,,
+C:/Users/USER/basketball/basketball.srcs/sim_1/new/basketball_tb.v,1764657535,verilog,,,,basketball_tb,,,../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/basketball.v,1764659270,verilog,,C:/Users/USER/basketball/basketball.srcs/sources_1/new/drawer.v,,basketball,,,../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/data_led.v,1764657535,verilog,,,,,,,,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/drawer.v,1764657535,verilog,,C:/Users/USER/basketball/basketball.srcs/sources_1/new/game.v,,drawer,,,../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/game.v,1764659135,verilog,,C:/Users/USER/basketball/basketball.srcs/sources_1/new/led.v,C:/Users/USER/basketball/basketball.srcs/sources_1/new/math.v,game,,,../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/led.v,1764657535,verilog,,C:/Users/USER/basketball/basketball.srcs/sources_1/new/tick.v,C:/Users/USER/basketball/basketball.srcs/sources_1/new/data_led.v,led,,,../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/math.v,1764657535,verilog,,,,,,,,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/tick.v,1764659685,verilog,,C:/Users/USER/basketball/basketball.srcs/sources_1/new/vga.v,,tick,,,../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/USER/basketball/basketball.srcs/sources_1/new/vga.v,1764657535,verilog,,C:/Users/USER/basketball/basketball.srcs/sim_1/new/basketball_tb.v,,vga,,,../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef,,,,,

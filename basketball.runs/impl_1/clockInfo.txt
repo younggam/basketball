@@ -1,7 +1,7 @@
 -------------------------------------
-| Tool Version : Vivado v.2025.1
-| Date         : Sat Nov 29 22:33:10 2025
-| Host         : DESKTOP-DQ3RCJM
+| Tool Version : Vivado v.2025.2
+| Date         : Tue Dec  2 17:15:31 2025
+| Host         : DESKTOP-VHT69T7
 | Design       : design_1
 | Device       : xc7a75t-fgg484-1--
 -------------------------------------
