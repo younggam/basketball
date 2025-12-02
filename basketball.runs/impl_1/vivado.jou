@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Dec  2 17:26:31 2025
-# Process ID         : 8080
+# Start of session at: Tue Dec  2 19:56:27 2025
+# Process ID         : 11696
 # Current directory  : C:/Users/USER/basketball/basketball.runs/impl_1
 # Command line       : vivado.exe -log basketball.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source basketball.tcl -notrace
 # Log file           : C:/Users/USER/basketball/basketball.runs/impl_1/basketball.vdi
@@ -17,8 +17,8 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 8314 MB
-# Swap memory        : 3397 MB
-# Total Virtual      : 11712 MB
-# Available Virtual  : 2460 MB
+# Swap memory        : 720 MB
+# Total Virtual      : 9035 MB
+# Available Virtual  : 2128 MB
 #-----------------------------------------------------------
 source basketball.tcl -notrace

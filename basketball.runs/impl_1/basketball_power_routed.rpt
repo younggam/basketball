@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date             : Tue Dec  2 17:28:28 2025
+| Date             : Tue Dec  2 19:58:21 2025
 | Host             : DESKTOP-VHT69T7 running 64-bit major release  (build 9200)
 | Command          : report_power -file basketball_power_routed.rpt -pb basketball_power_summary_routed.pb -rpx basketball_power_routed.rpx
 | Design           : basketball
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1203 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      722 |     47200 |            1.53 |
-|   CARRY4       |    <0.001 |       90 |     15850 |            0.57 |
+| Slice Logic    |    <0.001 |     1232 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      743 |     47200 |            1.57 |
+|   CARRY4       |    <0.001 |       96 |     15850 |            0.61 |
 |   Register     |    <0.001 |      178 |     94400 |            0.19 |
-|   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.001 |     1020 |       --- |             --- |
-| DSPs           |     0.003 |        9 |       180 |            5.00 |
+|   Others       |     0.000 |       15 |       --- |             --- |
+| Signals        |     0.001 |     1104 |       --- |             --- |
+| DSPs           |     0.002 |        9 |       180 |            5.00 |
 | I/O            |    <0.001 |       52 |       285 |           18.25 |
 | Static Power   |     0.097 |          |           |                 |
 | Total          |     0.104 |          |           |                 |

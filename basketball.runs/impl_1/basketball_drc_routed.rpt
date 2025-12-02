@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Tue Dec  2 17:28:26 2025
+| Date         : Tue Dec  2 19:58:19 2025
 | Host         : DESKTOP-VHT69T7 running 64-bit major release  (build 9200)
 | Command      : report_drc -file basketball_drc_routed.rpt -pb basketball_drc_routed.pb -rpx basketball_drc_routed.rpx
 | Design       : basketball
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 36
+             Checks found: 38
 +----------+----------+-----------------------------------------------------+--------+
 | Rule     | Severity | Description                                         | Checks |
 +----------+----------+-----------------------------------------------------+--------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
-| DPIP-1   | Warning  | Input pipelining                                    | 17     |
+| DPIP-1   | Warning  | Input pipelining                                    | 19     |
 | DPOP-1   | Warning  | PREG Output pipelining                              | 9      |
 | DPOP-2   | Warning  | MREG Output pipelining                              | 9      |
 +----------+----------+-----------------------------------------------------+--------+
@@ -111,25 +111,35 @@ Related violations: <none>
 
 DPIP-1#13 Warning
 Input pipelining  
-DSP game_/collide_dot0_return0 input game_/collide_dot0_return0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP game_/collide_dot0_return0 input game_/collide_dot0_return0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#14 Warning
 Input pipelining  
-DSP game_/collide_dot0_return0 input game_/collide_dot0_return0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP game_/collide_dot0_return0 input game_/collide_dot0_return0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#15 Warning
 Input pipelining  
-DSP game_/collide_dot_return0 input game_/collide_dot_return0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP game_/collide_dot_return0 input game_/collide_dot_return0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#16 Warning
 Input pipelining  
-DSP game_/collide_dot_return0 input game_/collide_dot_return0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP game_/collide_dot_return0 input game_/collide_dot_return0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#17 Warning
+Input pipelining  
+DSP game_/collide_dot_return0 input game_/collide_dot_return0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#18 Warning
+Input pipelining  
+DSP game_/collide_dot_return1 input game_/collide_dot_return1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#19 Warning
 Input pipelining  
 DSP game_/collide_dot_return1 input game_/collide_dot_return1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>

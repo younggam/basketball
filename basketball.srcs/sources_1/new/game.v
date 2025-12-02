@@ -124,7 +124,7 @@ module game
                     FLYING: begin
                         // 바닥에 닿거나 골대에 닿으면 상태 변경
                         if (ball_y >= 480 - BALL_RADIUS || ball_x + BALL_RADIUS < 0 ) state = IDLE; // 공 넘어감
-                        else if (collide_line(ball_x, ball_y, BALL_RADIUS, GOAL_X_LEFT, GOAL_X_RIGHT, GOAL_Y) && velocity_y <= 0) begin
+                        else if (collide_line(ball_x, ball_y, BALL_RADIUS, GOAL_X_LEFT, GOAL_X_RIGHT, GOAL_Y) && velocity_y >= 0) begin
                             score = score + 1; // 골 점수
                             velocity_x = velocity_x >>> 1; // 골망 효과 속도 감소
                             velocity_y = velocity_y >>> 1;
