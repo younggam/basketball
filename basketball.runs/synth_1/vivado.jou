@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Dec  2 17:13:53 2025
-# Process ID         : 14584
+# Start of session at: Tue Dec  2 17:25:23 2025
+# Process ID         : 8608
 # Current directory  : C:/Users/USER/basketball/basketball.runs/synth_1
 # Command line       : vivado.exe -log basketball.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source basketball.tcl
 # Log file           : C:/Users/USER/basketball/basketball.runs/synth_1/basketball.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 8314 MB
-# Swap memory        : 2158 MB
-# Total Virtual      : 10473 MB
-# Available Virtual  : 2115 MB
+# Swap memory        : 2168 MB
+# Total Virtual      : 10482 MB
+# Available Virtual  : 1004 MB
 #-----------------------------------------------------------
 source basketball.tcl -notrace
