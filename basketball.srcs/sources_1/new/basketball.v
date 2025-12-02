@@ -41,8 +41,6 @@ module basketball#(
     output wire [3:0] red,
     output wire [3:0] green,
     output wire [3:0] blue,
-    output wire [9:0] debug_,
-    output wire debug_btn,
     output wire hsync,
     output wire vsync
 );
@@ -51,7 +49,6 @@ module basketball#(
     wire [9:0] ball_x, ball_y;
     wire [9:0] pixel_x, pixel_y;
     wire video_on;
-    assign debug_btn=btn_throw;
     tick #(
         .CNT_1MS(CNT_1MS)
     )tick_(

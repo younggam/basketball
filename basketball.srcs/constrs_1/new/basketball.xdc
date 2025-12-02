@@ -50,16 +50,3 @@ set_property -dict {PACKAGE_PIN K22 IOSTANDARD LVCMOS33} [get_ports hsync]
 set_property -dict {PACKAGE_PIN K21 IOSTANDARD LVCMOS33} [get_ports vsync]
 
 create_clock -name clk -period 10.0 [get_ports clk]
-
-
-set_property -dict {PACKAGE_PIN Y18 IOSTANDARD LVCMOS33} [get_ports debug_[0]]
-set_property -dict {PACKAGE_PIN A18 IOSTANDARD LVCMOS33} [get_ports debug_[1]]
-set_property -dict {PACKAGE_PIN AB18 IOSTANDARD LVCMOS33} [get_ports debug_[2]]
-set_property -dict {PACKAGE_PIN W19 IOSTANDARD LVCMOS33} [get_ports debug_[3]]
-set_property -dict {PACKAGE_PIN AA19 IOSTANDARD LVCMOS33} [get_ports debug_[4]]
-set_property -dict {PACKAGE_PIN W20 IOSTANDARD LVCMOS33} [get_ports debug_[5]]
-set_property -dict {PACKAGE_PIN AA20 IOSTANDARD LVCMOS33} [get_ports debug_[6]]
-set_property -dict {PACKAGE_PIN W21 IOSTANDARD LVCMOS33} [get_ports debug_[7]]
-set_property -dict {PACKAGE_PIN Y21 IOSTANDARD LVCMOS33} [get_ports debug_[8]]
-set_property -dict {PACKAGE_PIN AA21 IOSTANDARD LVCMOS33} [get_ports debug_[9]]
-set_property -dict {PACKAGE_PIN AB22 IOSTANDARD LVCMOS33} [get_ports debug_btn]

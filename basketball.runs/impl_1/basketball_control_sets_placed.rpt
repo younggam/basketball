@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Tue Dec  2 19:57:31 2025
+| Date         : Tue Dec  2 20:12:56 2025
 | Host         : DESKTOP-VHT69T7 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file basketball_control_sets_placed.rpt
 | Design       : basketball
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               1 |            1 |
-| No           | No                    | Yes                    |              36 |           14 |
+| No           | No                    | Yes                    |              36 |           16 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               4 |            1 |
-| Yes          | No                    | Yes                    |             133 |           63 |
+| Yes          | No                    | Yes                    |             133 |           58 |
 | Yes          | Yes                   | No                     |               4 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -79,12 +79,12 @@ Table of Contents
 |  clk_IBUF_BUFG | tick_/tick_1ms_reg_0     | tick_/tick_1ms_reg_1 |                1 |              4 |         4.00 |
 |  clk_IBUF_BUFG | tick_/pixel_clk_reg_0[0] | game_/resetn         |                3 |             10 |         3.33 |
 |  clk_IBUF_BUFG | tick_/tick_1ms           | game_/resetn         |                4 |             13 |         3.25 |
-|  clk_IBUF_BUFG | game_/score[0]_i_1_n_0   | game_/resetn         |                4 |             16 |         4.00 |
-|  clk_IBUF_BUFG | tick_/E[0]               | game_/resetn         |                8 |             19 |         2.38 |
-|  clk_IBUF_BUFG | game_/ball_x[9]_i_1_n_0  | game_/resetn         |               11 |             20 |         1.82 |
-|  clk_IBUF_BUFG | tick_/tick_50ms          | game_/resetn         |               20 |             24 |         1.20 |
-|  clk_IBUF_BUFG | tick_/pixel_clk          | game_/resetn         |               12 |             27 |         2.25 |
-|  clk_IBUF_BUFG |                          | game_/resetn         |               14 |             36 |         2.57 |
+|  clk_IBUF_BUFG | tick_/tick_50ms_reg_0    | game_/resetn         |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG | tick_/E[0]               | game_/resetn         |                9 |             19 |         2.11 |
+|  clk_IBUF_BUFG | game_/ball_x[9]_i_1_n_0  | game_/resetn         |               10 |             20 |         2.00 |
+|  clk_IBUF_BUFG | tick_/tick_50ms          | game_/resetn         |               18 |             24 |         1.33 |
+|  clk_IBUF_BUFG | tick_/pixel_clk          | game_/resetn         |                9 |             27 |         3.00 |
+|  clk_IBUF_BUFG |                          | game_/resetn         |               16 |             36 |         2.25 |
 +----------------+--------------------------+----------------------+------------------+----------------+--------------+
 
 

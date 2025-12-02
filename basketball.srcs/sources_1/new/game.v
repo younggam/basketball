@@ -159,6 +159,7 @@ module game
                             || ball_x - GOAL_X_RIGHT <= ball_y - GOAL_Y && GOAL_X_RIGHT - ball_x >= ball_y - GOAL_Y) velocity_x = -velocity_x; // 좌 우 에서 접근 판별
                             else velocity_y = -velocity_y; // 아래 위에서 접근 판별
                         end
+                        else if (ball_x <= BALL_RADIUS || ball_x >= 640  - BALL_RADIUS ) velocity_x=-velocity_x;
                         ball_x = ball_x + velocity_x;
                         ball_y = ball_y + velocity_y;
                         velocity_y = velocity_y + GRAVITY; // 중력 적용 (포물선 운동)
